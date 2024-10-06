@@ -55,6 +55,3 @@ EOL
 else
     echo "Desktop entry already exists."
 fi
-
-# Now, you can toggle the keyboard here (this part depends on your actual toggle script)
-# Example of toggling logic (modify as per your requirements)

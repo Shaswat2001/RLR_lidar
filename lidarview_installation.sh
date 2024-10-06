@@ -24,3 +24,37 @@ mkdir build && cd build
 cmake ../ -DCMAKE_BUILD_TYPE=Release -DENABLE_slam=True -DUSE_SYSTEM_qt5=ON -DENABLE_pdal=ON
 
 cmake --build .
+
+# Path to your desktop launcher
+DESKTOP_FILE="$HOME/.local/share/applications/toggle-keyboard.desktop"
+
+# Script to toggle the keyboard (you can replace this with your own script logic)
+# For example, this can disable or enable the keyboard based on your needs
+# Here we're just printing a message for the sake of demonstration
+echo "Add shortcut ..."
+
+# Create the .desktop file if it doesn't exist
+if [ ! -f "$DESKTOP_FILE" ]; then
+    echo "Creating the desktop entry..."
+
+    cat > "$DESKTOP_FILE" <<EOL
+
+[Desktop Entry]
+Name=LidarView
+Comment=Open LidarView
+Exec=$PWD/lvsb/build/install/bin/LidarView
+Terminal=false
+Type=Application
+Categories=Utility;
+EOL
+
+    # Make the .desktop file executable
+    chmod +x "$DESKTOP_FILE"
+    
+    echo "Desktop entry created and made executable."
+else
+    echo "Desktop entry already exists."
+fi
+
+# Now, you can toggle the keyboard here (this part depends on your actual toggle script)
+# Example of toggling logic (modify as per your requirements)

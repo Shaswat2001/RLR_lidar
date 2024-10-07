@@ -1,4 +1,6 @@
-## LidarView Installation 
+# Velodyne Integration with Venture
+
+## LidarView Method 
 
 To install LidarView on the system, run the following command - 
 
